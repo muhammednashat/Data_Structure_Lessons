@@ -1,7 +1,7 @@
 package stack
 
 
-class MyStack(private val sizeOfStack: Int) {
+class StackUsingArray(private val sizeOfStack: Int) {
 
     private var array = Array(sizeOfStack) { 0 }
 
@@ -56,7 +56,7 @@ class MyStack(private val sizeOfStack: Int) {
 
 fun main() {
 
-    var stack = MyStack(5)
+    var stack = StackUsingArray(5)
     stack.push(11)
     stack.push(22)
     stack.push(33)
