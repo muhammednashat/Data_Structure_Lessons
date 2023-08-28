@@ -1,7 +1,6 @@
 package stack
 
 
-
 data class Node<T>(var value: T, var next: Node<T>? = null) {
 
     override fun toString(): String {
@@ -9,9 +8,7 @@ data class Node<T>(var value: T, var next: Node<T>? = null) {
         return if (next != null) {
 
             "$value -> ${next.toString()}"
-        }
-
-        else {
+        } else {
 
             "$value"
         }
@@ -19,42 +16,42 @@ data class Node<T>(var value: T, var next: Node<T>? = null) {
 }
 
 
-class StackUsingLinkedList <T>{
+class StackUsingLinkedList<T> {
 
-     var head: Node<T>? = null
+    var head: Node<T>? = null
 
-     var size = 0
+    var size = 0
 
-     val isEmpty
+    val isEmpty
         get() = size == 0
 
-    fun push(item : T){
-        if (head == null){
+    fun push(item: T) {
+        if (head == null) {
             head = Node(item)
-        }else{
-            val newNode= Node(item , head)
+        } else {
+            val newNode = Node(item, head)
             head = newNode
         }
-       size++
+        size++
     }
 
-    fun pop():T?{
-     return  if (isEmpty){
-         println("Stack is Empty")
-         null
-     }else{
-         val item = head?.value
-            size--
-         head = head?.next
-         return item
-     }
-    }
-
-    fun peek():T?{
-        return  if (isEmpty){
+    fun pop(): T? {
+        return if (isEmpty) {
             println("Stack is Empty")
             null
-        }else{
+        } else {
+            val item = head?.value
+            size--
+            head = head?.next
+            return item
+        }
+    }
+
+    fun peek(): T? {
+        return if (isEmpty) {
+            println("Stack is Empty")
+            null
+        } else {
             return head?.value
             null
         }
@@ -80,9 +77,6 @@ fun main() {
 //    println(stack.head.toString())
 //    println(stack.pop())
 //    println(stack.head.toString())
-
-
-
 
 
 }

@@ -4,25 +4,19 @@ package stack
 class StackUsingArray(private val sizeOfStack: Int) {
 
     private var array = Array(sizeOfStack) { 0 }
-
-     var size = 0
-
+    var size = 0
     private fun isEmpty() = size == 0
-
     private var top = -1
-
 
     fun printStack() {
         if (isEmpty()) {
             print(" stack is empty")
         } else {
-
             for (index in top downTo 0 step 1) {
                 print("${array[index]} -> ")
             }
         }
         println()
-
     }
 
     fun push(value: Int) {
@@ -32,21 +26,19 @@ class StackUsingArray(private val sizeOfStack: Int) {
             array[++top] = value
             size++
         }
-
     }
 
     fun pop(): Int? {
         return if (!isEmpty()) {
             val item = array[top--]
             size--
-             item
+            item
 
-        } else  null
+        } else null
 
     }
 
     fun peek(): Int? {
-
         return if (!isEmpty()) {
             array[top]
         } else null

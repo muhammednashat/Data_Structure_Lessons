@@ -1,0 +1,51 @@
+/*
+We are developing a program that includes data, and how we handle the data will affect the final product (performance and storage).
+
+Now we have a problem: How do we store the data?
+
+To store data, we need to have a value for each data type that will be stored in memory. This led to the concept of "data type."
+Instead of having a fixed storage value for all types, which can cause memory issues, we now have a value for each type.
+This value represents the allowed number of bytes.
+
+So, what is a byte?
+
+A byte is composed of 8 bits, with each bit being either 0 or 1. A byte is a space reservation consisting of 8 slots, and each slot can be either 0 or 1.
+
+Why 0 or 1?
+
+This is because it is the way computers understand and interpret data.
+
+Let's start by discussing how to store numbers. If you have an integer number, you need to choose a data type for it:
+
+- Short: 16 bits
+- Int: 32 bits
+- Long: 64 bits
+
+When you have an integer number, you choose one of these types. However, after converting your number from decimal to binary, you need to know how many slots it requires.
+For example, the number 5 in decimal is represented as 101 in binary, which means it needs 3 slots in memory to store 5.
+If you choose to store it as an int, it will look like this:
+
+00000000000000000000000000000101
+
+Why? Because we agreed that an int allows you to store 32 bits. If the number you're storing is less than that, the remaining slots will be filled with zeros.
+This results in unused memory space, which is not ideal.
+
+Therefore, if the number is a constant like 5 in your case, it is better to store it as a byte or short. If it is a decimal number, you can use the aforementioned data types and apply the same calculation to ensure efficient memory usage.
+
+For floating-point numbers, you can use:
+
+- Float: 32 bits
+- Double: 64 bits
+
+What if we have a character? We can use the "char" data type, which occupies 16 bits.
+
+All the types mentioned above are called primitive types because the space they occupy is fixed based on the variable type. Also, if you want to access the variable, you only need its name.
+
+But what about strings? In that case, we use the "String" data type. The space occupied by a string is not fixed because it can be of variable length. Strings are stored as a sequence, and the space used is not predefined.
+
+When accessing the value of a string variable, we use the variable's name to retrieve its pointer, which allows us to access the value. This is why this type is called a reference type.
+
+In summary, the primitive types have a defined space in memory based on the variable type, and accessing the value only requires the variable name. On the other hand, the reference type, like strings, doesn't have a predetermined space and is accessed through a pointer.
+
+In most programming languages, the developer doesn't need to create the pointer explicitly; the system takes care of it.
+*/
